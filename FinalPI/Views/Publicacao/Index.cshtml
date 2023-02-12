@@ -1,0 +1,77 @@
+﻿@using System.IO
+
+@model IEnumerable<FinalPI.Models.Publicacao>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+    <title>Index</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, rgb(0, 85, 255), rgb(53, 161, 197), rgb(146, 5, 217));
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+            src: url("../fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+            margin: 50px;
+        }
+
+        #imagem {
+            margin-top: 10px;
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+        }
+
+        .container {
+            border-radius: 25px;
+            width: 300px;
+            margin: auto;
+            margin-bottom: 50px;
+            padding: 25px;
+            background-color: whitesmoke;
+        }
+
+        .publicar {
+            text-align: right;
+            background-image: linear-gradient(to right, rgb(0, 170, 255), rgb(77, 195, 255));
+            border-radius: 200px;
+            text-decoration: none !important;
+            padding: 10px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <p class="publicar">
+        @Html.ActionLink("Publicar", "Create")
+    </p>
+
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <div class="coisa">
+                @if (item.Imagem != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Conteudo)
+                    <img src="@Url.Action("GetImagem", "Publicacao", new { id = item.Id })" id="imagem">
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Conteudo)
+                }
+            </div>
+        </div>
+    }
+</body>
+</html>
