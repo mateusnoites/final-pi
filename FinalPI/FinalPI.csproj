@@ -120,6 +120,10 @@
     <Compile Include="Migrations\202302120243280_MyMigration1.Designer.cs">
       <DependentUpon>202302120243280_MyMigration1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202302131410002_Data.cs" />
+    <Compile Include="Migrations\202302131410002_Data.Designer.cs">
+      <DependentUpon>202302131410002_Data.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Publicacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302120243280_MyMigration1.resx">
       <DependentUpon>202302120243280_MyMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302131410002_Data.resx">
+      <DependentUpon>202302131410002_Data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

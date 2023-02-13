@@ -13,5 +13,6 @@ namespace FinalPI.Models
         public string Conteudo { get; set; }
         public string Imagem { get; set; }
         public string TipoArquivo { get; set; }
+        public string DataPostagem { get; set; }
     }
 }

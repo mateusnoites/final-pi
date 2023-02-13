@@ -53,11 +53,11 @@ namespace FinalPI.Controllers
             }
             catch
             {
-
                 return View(publicacao);
             }
         }
 
+        // GET: Imagem
         public FileContentResult GetImagem(long id)
         {
             Publicacao publicacao = context.Publicacoes.Where(p => p.Id == id).First();
